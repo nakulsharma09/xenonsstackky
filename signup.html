@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Login/Signup</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="logoname">uNIv</a>
+            <button class="topnavbtn"><a href="login.html">Login</a></button>
+        </div>
+    </nav>
+
+    <div class="box-form">
+        <div class="left">
+            <div class="overlay">
+                <h1>New here... ?</h1>
+                <p>Already have an account?<br><a href="login.html">Login Now </a></p>
+            </div>
+        </div>
+
+        <div class="right">
+            <h5>Join Us</h5>
+            <p>Enter your Details to join us...</p>
+            <form id="reg-form">
+                <div class="inputs">
+                    <input type="text" autocomplete="off" id="username" placeholder="Username" />
+                    <input type="password" autocomplete="off" id="password" placeholder="Password" />
+                    <button><input type="submit" value="Submit Form" /></button>
+                </div>
+            </form>
+        </div>
+
+        <br><br>
+    </div>
+    <script>
+        const form = document.getElementById('reg-form')
+        form.addEventListener('submit', registerUser)
+
+        async function registerUser(event) {
+            event.preventDefault()
+            const username = document.getElementById('username').value
+            const password = document.getElementById('password').value
+
+            const result = await fetch('/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username,
+                    password
+                })
+            }).then((res) => res.json())
+
+            if (result.status === 'ok') {
+                // everythign went fine
+                alert('Success')
+            } else {
+                alert(result.error)
+            }
+        }
+    </script>
+</body>
+
+</html>
