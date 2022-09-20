@@ -9,7 +9,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="./style.css">
-	<title>Login/Signup</title>
+	<title>index/Signup</title>
 </head>
 
 <body>
@@ -29,8 +29,8 @@
 		</div>
 
 		<div class="right">
-			<h5>Login</h5>
-			<p>Please Enter Your Details to Login...</p>
+			<h5>index</h5>
+			<p>Please Enter Your Details to index...</p>
 			<form id="reg-form">
 				<div class="inputs">
 					<input type="text" autocomplete="off" id="username" placeholder="Username" />
@@ -43,15 +43,15 @@
 		</div>
 	</div>
 	<script>
-		const form = document.getElementById('login')
-		form.addEventListener('submit', login)
+		const form = document.getElementById('index')
+		form.addEventListener('submit', index)
 
-		async function login(event) {
+		async function index(event) {
 			event.preventDefault()
 			const username = document.getElementById('username').value
 			const password = document.getElementById('password').value
 
-			const result = await fetch('/api/login', {
+			const result = await fetch('/api/index', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'

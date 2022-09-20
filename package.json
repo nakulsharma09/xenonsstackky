@@ -1,0 +1,23 @@
+{
+  "name": "nn",
+  "version": "1.0.0",
+  "description": "\"# xenonsstackky\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nakulsharma09/xenonsstackky.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nakulsharma09/xenonsstackky/issues"
+  },
+  "homepage": "https://github.com/nakulsharma09/xenonsstackky#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "expresss": "^0.0.0"
+  }
+}
