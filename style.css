@@ -37,7 +37,7 @@ body {
 }
 
 .box-form {
-  margin: 5rem auto;
+  margin: 3rem auto;
   width: 80%;
   background: #ffffff;
   border-radius: 10px;
@@ -254,4 +254,17 @@ fieldset {
 
 nav a {
   text-decoration: none;
+}
+
+.contactdiv {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.contactdiv a h3 {
+  text-decoration: underline;
+  line-height: normal;
+  font-weight: 400;
+  color: white;
 }
